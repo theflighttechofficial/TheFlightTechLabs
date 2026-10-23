@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ResumeForge AI Privacy Policy | The Flight Tech Labs</title>
+  <meta name="description" content="Privacy policy for ResumeForge AI for Windows: what data the app handles, where it is stored, when it leaves your device, and your choices.">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Main">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/"><span class="logo">FT</span>The Flight Tech Labs</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/apps" aria-current="page">Apps</a></li>
+        <li><a href="/install">Install</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/changelog">Changelog</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <div class="nav-cta"><a class="btn btn-primary btn-sm" href="/apps">Get apps</a></div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="crumbs"><a href="/">Home</a> / <a href="/apps">Apps</a> / <a href="/apps/resumeforge-ai">ResumeForge AI</a> / Privacy</div>
+        <h1>ResumeForge AI Privacy Policy</h1>
+        <p class="updated">Effective date: 23 October 2026 &middot; Last updated: 23 October 2026</p>
+      </div>
+    </section>
+
+    <section class="section tight" style="padding-top:0">
+      <div class="wrap legal">
+        <p>This policy explains how ResumeForge AI (the "App"), published by The Flight Tech Labs ("we", "us", "our"), handles your information. It applies to the ResumeForge AI desktop app for Windows, including copies distributed through the Microsoft Store, our website and GitHub. For this website itself, see our <a href="/privacy">website privacy policy</a>.</p>
+
+        <p><strong>Summary.</strong> ResumeForge AI is offline-first. Your resumes, job descriptions, accounts and settings are stored on your own PC. We do not run servers that receive your data, we do not collect telemetry or analytics, and we do not sell or share your personal information. Data leaves your device only when you choose to turn on Online Mode and use a cloud AI provider with your own API key.</p>
+
+        <h2>1. Who we are</h2>
+        <p>The Flight Tech Labs is the developer and publisher of ResumeForge AI. You can reach us through our <a href="/contact">contact page</a> or at <strong>[support email address]</strong>.</p>
+
+        <h2>2. Information the App handles</h2>
+        <p>To do its job, the App processes information that you choose to give it. All of this is stored locally on your device:</p>
+        <ul>
+          <li><strong>Resume content:</strong> resumes you upload or build (PDF, DOCX and similar files). These usually include your name, contact details, work history, education, skills and links to online profiles.</li>
+          <li><strong>Job descriptions</strong> that you paste or import for matching and scoring.</li>
+          <li><strong>Generated content:</strong> analyses, ATS scores, fix plans, AI suggestions and exported resumes.</li>
+          <li><strong>Local account data:</strong> account names, password hashes and recovery code hashes. Passwords are hashed with scrypt and a unique salt. We never store your password in plain text.</li>
+          <li><strong>API keys</strong> for cloud AI providers, only if you enter them. On Windows these are encrypted with the Windows Data Protection API (DPAPI).</li>
+          <li><strong>Settings and preferences</strong>, such as theme, auto-lock timer and AI mode.</li>
+          <li><strong>Hardware information:</strong> the App reads your CPU, memory and GPU details (using Windows Management Instrumentation and, if present, <code>nvidia-smi</code>) to choose a suitable AI model. This information stays on your device and is never sent to us.</li>
+        </ul>
+        <p>We do <strong>not</strong> collect usage analytics, crash reports, advertising identifiers, location data, contacts, or camera or microphone data.</p>
+
+        <h2>3. Where your data is stored</h2>
+        <p>The App stores data in local SQLite databases and files in your Windows user profile (under <code>%APPDATA%</code>). Each local account has its own separate database, files and settings. You can see the exact storage paths in the App's Privacy Center.</p>
+        <p>We do not have access to this data. It is not uploaded to us and is not backed up to any server we control.</p>
+
+        <h2>4. How the App uses information</h2>
+        <ul>
+          <li>To parse, score and compare your resume against job descriptions.</li>
+          <li>To generate AI suggestions and edits that you can review, accept or reject.</li>
+          <li>To protect your local account (sign-in, auto-lock and recovery).</li>
+          <li>To pick an AI model suited to your hardware.</li>
+        </ul>
+        <p>We do not use your information for advertising, profiling or training AI models.</p>
+
+        <h2>5. When data leaves your device</h2>
+        <h3>Local AI mode (default)</h3>
+        <p>By default, AI features run through Ollama on your own computer at <code>127.0.0.1</code>. Your resume and job text are not sent over the internet. The App's local engine listens only on the loopback address and refuses requests from other machines.</p>
+
+        <h3>Online Mode (optional, off by default)</h3>
+        <p>You can turn on Online Mode and enter an API key for a cloud AI provider. Supported providers include OpenAI, Anthropic, Google Gemini, Groq, OpenRouter, DeepSeek, xAI, Perplexity, Cohere, Mistral, Together, Fireworks and Cerebras, or a custom endpoint you configure. In Online Mode, the App sends the text needed for each request directly from your device to that provider.</p>
+        <ul>
+          <li>Before sending, the App replaces personal contact details (such as names, email addresses, phone numbers and URLs) with placeholder tokens. It puts them back on your device after the response arrives.</li>
+          <li>The rest of the request, such as work history, skills and job description text, is sent to the provider you selected.</li>
+          <li>That provider processes the data under its own terms and privacy policy, under your account. We do not receive, see or store this data.</li>
+          <li>You can turn Online Mode off at any time. The App then uses local AI only.</li>
+        </ul>
+
+        <h3>Other network connections</h3>
+        <ul>
+          <li><strong>Model setup:</strong> when you install Ollama or download AI models through the setup wizard, your device connects to Ollama's servers to download them. Those servers may log standard technical information such as your IP address.</li>
+          <li><strong>Downloads:</strong> if you download the installer from our website or GitHub instead of the Microsoft Store, those services keep standard server logs.</li>
+        </ul>
+        <p>The App contains no third-party analytics, tracking pixels or remote error reporting.</p>
+
+        <h2>6. Sharing and sale of information</h2>
+        <p>We do not sell, rent or trade your personal information, and we do not share it with third parties. The only transfer of your data to a third party is the Online Mode request described in section 5, which you start and control.</p>
+
+        <h2>7. Data retention</h2>
+        <p>Your data stays on your device for as long as you keep it, and you decide when to delete it. We hold no copy, so we have nothing to retain.</p>
+
+        <h2>8. Your choices and control</h2>
+        <ul>
+          <li><strong>View:</strong> the Privacy Center shows what is stored and where.</li>
+          <li><strong>Delete:</strong> you can delete individual resumes, jobs and analyses, clear caches, wipe an entire account in one click, or factory-reset the App.</li>
+          <li><strong>Remove API keys</strong> at any time in Settings.</li>
+          <li><strong>Stay offline:</strong> leave Online Mode off and no resume data leaves your device.</li>
+          <li><strong>Uninstall:</strong> uninstalling removes the App. To remove all stored data as well, use the factory reset first, or delete the App's folder under <code>%APPDATA%</code>.</li>
+        </ul>
+        <p>Depending on where you live (for example under the GDPR, UK GDPR, India's Digital Personal Data Protection Act 2023 or California law), you may have rights to access, correct, delete or port your personal data. Because your data is stored only on your device, you can exercise these rights directly in the App. If you have questions, contact us.</p>
+
+        <h2>9. Security</h2>
+        <ul>
+          <li>Passwords are hashed with scrypt (N=32768, r=8, p=1) and unique salts.</li>
+          <li>API keys are encrypted with Windows DPAPI or AES-256-GCM and are never passed to the App's user interface.</li>
+          <li>The App's local server binds only to <code>127.0.0.1</code> and requires a per-session token.</li>
+          <li>The user interface runs in a sandboxed renderer with a strict Content Security Policy.</li>
+          <li>Accounts can auto-lock after inactivity, and you can lock immediately with Ctrl+L.</li>
+        </ul>
+        <p>No method of storage is perfectly secure. Keep your Windows account protected and store your recovery code safely. We cannot recover a forgotten password or recovery code, because we never have access to them.</p>
+
+        <h2>10. Children</h2>
+        <p>ResumeForge AI is intended for people preparing job applications and is not directed at children under 13 (or the minimum age in your country). We do not knowingly collect personal information from children.</p>
+
+        <h2>11. Self-hosted Web Edition</h2>
+        <p>If you or your organisation run the self-hosted Web Edition, data is stored on the server you control, and whoever runs that server is responsible for it. We do not receive data from self-hosted installations.</p>
+
+        <h2>12. Changes to this policy</h2>
+        <p>We may update this policy when the App changes. We will post the new version on this page and update the date at the top. Significant changes will also be noted in the <a href="/changelog">changelog</a>.</p>
+
+        <h2>13. Contact us</h2>
+        <p>For privacy questions or requests, contact The Flight Tech Labs through the <a href="/contact">contact page</a> or at <strong>[support email address]</strong>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a class="brand" href="/"><span class="logo">FT</span>The Flight Tech Labs</a>
+          <p>Practical software for Windows. Built in-house, shipped with clear versions and honest notes.</p>
+        </div>
+        <div><h5>Product</h5><a href="/apps">Apps</a><a href="/install">Install guide</a><a href="/changelog">Changelog</a><a href="/projects">Projects</a></div>
+        <div><h5>Help</h5><a href="/faq">FAQ</a><a href="/contact">Contact</a><a href="/about">About</a></div>
+        <div><h5>Legal</h5><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
+      </div>
+      <div class="copy"><span>&copy; <span data-year></span> The Flight Tech Labs. All rights reserved.</span></div>
+    </div>
+  </footer>
+</body>
+</html>
