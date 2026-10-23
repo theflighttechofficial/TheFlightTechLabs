@@ -1,137 +1,119 @@
 # The Flight Tech Labs
 
-Official website for **The Flight Tech Labs**: the download home for our Windows apps and a showcase of the other sites we build and host.
+A modern, high-performance static web platform showcasing native desktop software and web applications created by **The Flight Tech Labs**.
 
-- **Featured app:** [ResumeForge AI](apps/resumeforge-ai/index.html), an offline-first ATS resume engineer for Windows 10/11.
-- **Projects:** links and short descriptions for our other live sites (Silicon Matrix, NAVIK Simulator, Kumari Kandam, Škoda Volkswagen India Showcase, Oru Payanam Aayiram Kathaigal, Lumisphere).
+---
 
-The site is plain HTML, CSS and JavaScript. There is no framework and no build step. App and project lists are rendered from two JSON files, so most updates are data edits.
+## 🌐 Overview
 
-## Tech
+**The Flight Tech Labs** serves as the central digital hub and distribution portal for our software suite and digital initiatives:
 
-- Static HTML pages with one shared stylesheet (`assets/css/styles.css`) and one script (`assets/js/main.js`)
-- Content data in `apps.json` (apps, versions, changelogs) and `sites.json` (other hosted sites)
-- Hosted on [Vercel](https://vercel.com) with clean URLs, redirects and security headers set in `vercel.json`
+- **Featured Native Applications**: Flagship desktop tools including [ResumeForge AI](apps/resumeforge-ai/index.html)—an offline-first ATS resume engineering suite for Windows 10/11.
+- **Projects & Ecosystem Showcase**: Interactive catalogue detailing live web applications, simulations, and platforms (including Silicon Matrix, NAVIK Simulator, Kumari Kandam, Škoda Volkswagen India Showcase, Oru Payanam Aayiram Kathaigal, and Lumisphere).
+- **Lightweight Architecture**: Fully vanilla architecture (HTML5, modern CSS, dynamic ES6 JavaScript) engineered without heavyweight frameworks or build overhead. Content and catalogs are dynamically driven through clean JSON state schemas.
 
-## Project structure
+---
 
-```
+## ⚡ Architecture & Tech Stack
+
+| Layer | Technology | Details |
+| :--- | :--- | :--- |
+| **Frontend Core** | HTML5 / ES6 JavaScript | Semantic, zero-dependency client-side architecture with clean asynchronous data loading |
+| **Design System** | Modern Vanilla CSS | Custom utility tokens, glassmorphism, responsive typography, and system dark theme (`assets/css/styles.css`) |
+| **State & Data** | Structured JSON | Single source of truth for software releases (`apps.json`) and portfolio sites (`sites.json`) |
+| **Routing & Hosting**| Vercel Engine | Clean URL routing (`/apps`, `/faq`), cache controls, custom redirects, and strict security headers via `vercel.json` |
+| **SEO & Discoverability** | Standard Meta / XML | Structured Open Graph metadata, semantic document outlines, dynamic XML sitemap, and search engine directives (`robots.txt`) |
+
+---
+
+## 📁 Repository Structure
+
+```text
 flighttechlabs/
-├── index.html                 Home
+├── index.html                 # Platform landing & hero showcase
 ├── apps/
-│   ├── index.html             All apps (rendered from apps.json)
+│   ├── index.html             # Software catalog (dynamically rendered from apps.json)
 │   └── resumeforge-ai/
-│       └── index.html         App detail page (filled from apps.json)
-├── install.html               Install guide + SmartScreen help
-├── faq.html                   FAQ (details/summary accordion)
-├── changelog.html             Release history (rendered from apps.json)
-├── projects.html              Other sites (rendered from sites.json)
-├── about.html
-├── contact.html               Form (demo; wire to a backend)
-├── privacy.html               Privacy policy (template)
-├── terms.html                 Terms of use (template)
-├── 404.html
-├── apps.json                  Single source of truth for apps
-├── sites.json                 Links + about text for other hosted sites
-├── vercel.json                Clean URLs, redirects, headers
-├── robots.txt
-├── sitemap.xml
+│       └── index.html         # Application showcase & release details
+├── projects.html              # Web ecosystem directory (dynamically rendered from sites.json)
+├── changelog.html             # Centralized versioning & release history
+├── faq.html                   # Frequently Asked Questions & user guidance
+├── about.html                 # Team overview, philosophy, and mission
+├── contact.html               # Contact & communication portal
+├── privacy.html               # Privacy Policy
+├── terms.html                 # Terms of Service
+├── 404.html                   # Custom error page
+├── apps.json                  # Data schema: Application registry, releases & changelogs
+├── sites.json                 # Data schema: Web projects, descriptions & URLs
+├── vercel.json                # Deployment configuration, clean routing & HTTP headers
+├── robots.txt                 # Crawler directives
+├── sitemap.xml                # SEO index
 ├── assets/
-│   ├── css/styles.css
-│   ├── js/main.js
-│   └── img/favicon.svg
+│   ├── css/
+│   │   └── styles.css         # Unified stylesheet & design system
+│   ├── js/
+│   │   └── main.js            # App hydration, theme handling & client logic
+│   └── img/
+│       └── favicon.svg        # Brand vector identity
 └── downloads/
-    ├── README.txt
-    └── ResumeForgeAI-Setup.exe   <- add this file
+    └── README.txt             # Distribution asset guidelines & storage notes
 ```
 
-## Run locally
+---
 
-Links use clean URLs (`/faq`, not `/faq.html`), and the page lists are loaded with `fetch()`. Opening the HTML files directly from disk does not work. Use a local server that supports clean URLs:
+## 📄 Data Schemas
 
-```
-npx serve .
-```
+The website utilizes declarative JSON files to manage content dynamically without touching markup:
 
-Or run Vercel's own dev server:
-
-```
-npx vercel dev
-```
-
-Then open the URL the command prints, for example http://localhost:3000.
-
-## Add a new app
-
-1. Put the installer in `downloads/`, for example `downloads/MyApp-Setup-1.0.0.exe`.
-2. Add an object to `apps.json`:
-   - `id`, `slug` (used in `/apps/<slug>`), `name`, `monogram`, `tagline`, `description`
-   - `features` (array), `version`, `platform`, `requirements`, `size`, `releaseDate`
-   - `file` (`/downloads/...`), `fileName` (download name), `releaseNotes`
-   - `changelog` (array of `{ version, date, notes[] }`)
-3. Copy `apps/resumeforge-ai/index.html` to `apps/<slug>/index.html`. Change `data-app-id` on `<main>` to the new `id`, and update the title and breadcrumb.
-4. Add the URL to `sitemap.xml`.
-
-The app card on `/apps` and the home page appears automatically after step 2.
-
-## Add another hosted site
-
-Add an object to `sites.json`:
+### 1. Applications (`apps.json`)
+Maintains metadata, distribution assets, feature lists, versioning, and release histories for desktop utilities.
 
 ```json
 {
-  "name": "My Site",
-  "url": "https://my-site.vercel.app/",
-  "monogram": "MS",
-  "category": "Short label",
-  "about": "One or two sentences about the site."
+  "id": "resumeforge-ai",
+  "slug": "resumeforge-ai",
+  "name": "ResumeForge AI",
+  "monogram": "RF",
+  "tagline": "Offline-First ATS Resume Engineer",
+  "description": "Desktop resume engineer for Windows.",
+  "features": ["100% Offline", "Live Preview", "ATS Optimized"],
+  "version": "1.0.0",
+  "platform": "Windows 10 / 11 (64-bit)",
+  "file": "https://github.com/.../releases/download/v1.0.0/...",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-10-23",
+      "notes": ["Initial production release"]
+    }
+  ]
 }
 ```
 
-It appears on `/projects` automatically.
+### 2. Projects & Sites (`sites.json`)
+Drives the portfolio index on `projects.html` for associated web applications and client showcases.
 
-## Deploy to Vercel
-
-**Dashboard**
-1. Push this repo to GitHub.
-2. In Vercel, choose **Add New → Project** and import the repo.
-3. Framework preset: **Other**. Build command: empty. Output directory: `.` (root).
-4. Deploy. Every push to the main branch redeploys the site.
-
-**CLI**
-```
-npm i -g vercel
-vercel          # preview
-vercel --prod   # production
+```json
+{
+  "name": "NAVIK Simulator",
+  "url": "https://navik-simulator.vercel.app/",
+  "monogram": "NS",
+  "category": "Simulation & Aviation",
+  "about": "A web-based interactive navigation and flight simulator."
+}
 ```
 
-## Installer files and GitHub
+---
 
-GitHub rejects files larger than 100 MB, and Electron installers are often close to that size. If `ResumeForgeAI-Setup.exe` is too big:
+## 🔒 Security & Routing
 
-- Upload the installer to a **GitHub Release** and point `file` in `apps.json` to the release download URL, or
-- Track it with [Git LFS](https://git-lfs.com).
+Configured at the network edge via `vercel.json`:
+- **Clean URLs**: Extensionless routing (e.g., `/projects` maps cleanly to `/projects.html`).
+- **Security Headers**: Includes `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `X-XSS-Protection`, and strict `Referrer-Policy`.
+- **Attachment Handling**: Content-Disposition controls for software delivery binaries.
 
-To keep installers out of the repo entirely, uncomment the `downloads/*.exe` line in `.gitignore`.
+---
 
-## Before going live
-
-- [ ] Replace `YOUR-DOMAIN.com` in `sitemap.xml` and `robots.txt`
-- [ ] Put the real support email on `contact.html`
-- [ ] Wire the contact form to a backend (Formspree, a Vercel function, etc.). The current form only shows a confirmation toast.
-- [ ] Review and finalise `privacy.html` and `terms.html` (templates, not legal advice)
-- [ ] Add the governing-law line in `terms.html`
-- [ ] Add the real `version`, `size` and `releaseDate` to `apps.json` once the installer is in
-- [ ] Confirm the installer is under Vercel's static file size limit (see `downloads/README.txt`)
-- [ ] Optional: add screenshots to `apps.json` as `screenshots: [{ "src": "/assets/img/...", "alt": "..." }]`
-- [ ] Code-sign the `.exe` before public launch to reduce SmartScreen warnings
-
-## Notes
-
-- Downloads are served with `Content-Disposition: attachment` (see `vercel.json`), so the download button saves the file instead of opening it.
-- `cleanUrls` is on: `/install.html` is served at `/install`.
-- Static content works with JavaScript disabled. The app and project lists need JavaScript.
-
-## License
+## ⚖️ License & Copyright
 
 © The Flight Tech Labs. All rights reserved.
