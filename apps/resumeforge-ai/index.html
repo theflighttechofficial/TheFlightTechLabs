@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ResumeForge AI | The Flight Tech Labs</title>
+  <meta name="description" content="Download ResumeForge AI for Windows. Offline-first ATS resume engineer with local AI, deterministic scoring and zero telemetry.">
+  <meta property="og:title" content="ResumeForge AI | The Flight Tech Labs">
+  <meta property="og:description" content="Offline-first ATS resume engineer. Download for Windows.">
+  <meta property="og:type" content="product">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Main">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/"><span class="logo">FT</span>The Flight Tech Labs</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/apps" aria-current="page">Apps</a></li>
+        <li><a href="/install">Install</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/changelog">Changelog</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <div class="nav-cta"><a class="btn btn-primary btn-sm" href="/apps">Get apps</a></div>
+    </div>
+  </nav>
+
+  <main data-app-id="resumeforge-ai">
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="crumbs"><a href="/">Home</a> / <a href="/apps">Apps</a> / ResumeForge AI</div>
+        <div class="detail-head">
+          <div class="icon" aria-hidden="true" data-bind="monogram" data-fallback="RF">RF</div>
+          <div>
+            <h1 data-bind="name">ResumeForge AI</h1>
+            <p class="tagline" style="font-size:1.1rem" data-bind="tagline"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight" style="padding-top:0">
+      <div class="wrap detail-grid">
+
+        <div>
+          <div class="panel">
+            <h2>About this app</h2>
+            <p class="desc" style="font-size:1.02rem" data-bind="description"></p>
+          </div>
+
+          <div class="panel">
+            <h2>Features</h2>
+            <ul class="features" data-list="features"></ul>
+          </div>
+
+          <div class="panel">
+            <h2>Screenshots</h2>
+            <div class="screens" data-screens></div>
+          </div>
+
+          <div class="panel prose">
+            <h2>Getting started</h2>
+            <ol>
+              <li>Download the installer using the button on the right.</li>
+              <li>Open the downloaded file and follow the setup steps.</li>
+              <li>Launch ResumeForge AI from the Start menu or desktop.</li>
+              <li>Create your local account and store the 24-character recovery code somewhere safe. It is the only way back in if you forget your password.</li>
+              <li>Follow the setup wizard: it checks your hardware, installs Ollama and downloads the local models.</li>
+              <li>Upload your resume, paste a job description, and review your ATS score and fix plan.</li>
+            </ol>
+            <p>If Windows shows a protection prompt, see the <a href="/install#smartscreen">SmartScreen guide</a>. Need help? <a href="/faq">Check the FAQ</a> or <a href="/contact">contact us</a>.</p>
+          </div>
+
+          <div class="panel">
+            <h2>Version history</h2>
+            <p class="muted" style="margin:0">Latest release: <strong style="color:var(--text)" data-bind="version"></strong>. <a href="/changelog">View full changelog</a>.</p>
+          </div>
+        </div>
+
+        <aside class="dl-panel">
+          <div class="panel">
+            <a class="btn btn-primary btn-block" data-href href="/downloads/ResumeForgeAI-Setup.exe" download="ResumeForgeAI-Setup-1.0.0.exe">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>
+              Download for Windows
+            </a>
+            <p class="hint">Installer for Windows. Starts the download straight away.</p>
+          </div>
+
+          <div class="panel">
+            <h2>Details</h2>
+            <dl class="spec">
+              <dt>Version</dt><dd data-bind="version" data-fallback="—"></dd>
+              <dt>Platform</dt><dd data-bind="platform" data-fallback="Windows"></dd>
+              <dt>Requirements</dt><dd data-bind="requirements" data-fallback="See install guide"></dd>
+              <dt>File size</dt><dd data-bind="size" data-fallback="—"></dd>
+              <dt>Released</dt><dd data-bind="releaseDate" data-fallback="—"></dd>
+              <dt>File</dt><dd data-bind="fileName" data-fallback="—" style="word-break:break-all"></dd>
+            </dl>
+          </div>
+
+          <div class="callout" style="margin-top:20px">
+            <div><strong>Before you install</strong><br>Read the <a href="/install">install guide</a> for steps and what to expect from Windows.</div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a class="brand" href="/"><span class="logo">FT</span>The Flight Tech Labs</a>
+          <p>Practical software for Windows. Built in-house, shipped with clear versions and honest notes.</p>
+        </div>
+        <div><h5>Product</h5><a href="/apps">Apps</a><a href="/install">Install guide</a><a href="/changelog">Changelog</a><a href="/projects">Projects</a></div>
+        <div><h5>Help</h5><a href="/faq">FAQ</a><a href="/contact">Contact</a><a href="/about">About</a></div>
+        <div><h5>Legal</h5><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
+      </div>
+      <div class="copy"><span>&copy; <span data-year></span> The Flight Tech Labs. All rights reserved.</span></div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Silicon Matrix (RigForge)",
+    "url": "https://rigforge-livid.vercel.app/",
+    "monogram": "SM",
+    "category": "PC hardware",
+    "about": "Plan, compare and check PC builds with Indian prices: bottleneck checks, FPS estimates, power supply sizing, running costs and a hardware scan of your own PC."
+  },
+  {
+    "name": "NAVIK Simulator",
+    "url": "https://navik-simulator.vercel.app/",
+    "monogram": "NV",
+    "category": "Autonomous driving",
+    "about": "A web simulator showing how NAVIK, our autonomous driving bot, uses its sensors to drive a vehicle on Indian roads."
+  },
+  {
+    "name": "Kumari Kandam: The Lost Mythology",
+    "url": "https://kumarikandam-the-lost-mythology.vercel.app/",
+    "monogram": "KK",
+    "category": "History & myth",
+    "about": "An interactive atlas asking whether a lost continent lay south of India. Follows Lemuria from Sclater's 1864 land bridge to Theosophy and the Tamil Kumari Kandam tradition, then tests it against plate tectonics."
+  },
+  {
+    "name": "Škoda Volkswagen Group India Showcase",
+    "url": "https://skoda-auto-volkswagen-india-pvt-ltd.vercel.app/",
+    "monogram": "VW",
+    "category": "Automotive",
+    "about": "Independent guide to Volkswagen Group brands in India: Škoda, Volkswagen, Audi, Porsche, Lamborghini, Bentley, MAN and Scania. Compare models, prices, engines and safety."
+  },
+  {
+    "name": "Oru Payanam Aayiram Kathaigal",
+    "url": "https://oru-payanam-aayiram-kathaigal-xe6d-omega.vercel.app/",
+    "monogram": "OP",
+    "category": "Interactive storytelling",
+    "about": "A cinematic web journey inspired by Tamil Nadu's vintage TNSTC buses. Board at Villupuram, pick a destination such as Chennai, Madurai, Thanjavur, Kanyakumari or Ooty, and explore its heritage, food, cinema and stories through illustration, a retro bus-console interface, audio and animation."
+  },
+  {
+    "name": "Lumisphere",
+    "url": "https://lumisphere-nine.vercel.app/",
+    "monogram": "LS",
+    "category": "Interactive portfolio",
+    "about": "Illuminate the web. An interactive 3D personal showcase exploring light, ambience and visual design, where every pixel, transition and sound cue is crafted as part of the experience."
+  }
+]

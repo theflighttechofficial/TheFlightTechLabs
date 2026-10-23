@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Install guide | The Flight Tech Labs</title>
+  <meta name="description" content="How to download and install Flight Tech Labs apps on Windows, including what to do about SmartScreen warnings.">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Main">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/"><span class="logo">FT</span>The Flight Tech Labs</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/apps">Apps</a></li>
+        <li><a href="/install" aria-current="page">Install</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/changelog">Changelog</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <div class="nav-cta"><a class="btn btn-primary btn-sm" href="/apps">Get apps</a></div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="crumbs"><a href="/">Home</a> / Install guide</div>
+        <h1>Install guide</h1>
+        <p>Everything you need to download and run our Windows apps. Takes about five minutes.</p>
+      </div>
+    </section>
+
+    <section class="section tight" style="padding-top:0">
+      <div class="wrap prose" style="max-width:860px">
+
+        <h2>Before you start</h2>
+        <ul>
+          <li>Windows 10 or Windows 11, 64-bit. Check under <strong>Settings &gt; System &gt; About</strong>.</li>
+          <li>Enough free disk space for the app. Each app page lists its size.</li>
+          <li>An administrator account, if your PC is managed by your organisation. Ask your IT team if you are unsure.</li>
+        </ul>
+
+        <h2>Step 1: Download</h2>
+        <p>Open the app page from the <a href="/apps">Apps</a> list and press <strong>Download for Windows</strong>. Your browser saves the installer to your Downloads folder. Installers are named with the app and version, for example <code>ResumeForgeAI-Setup-1.0.0.exe</code>.</p>
+
+        <h2>Step 2: Run the installer</h2>
+        <ol>
+          <li>Open your Downloads folder and double-click the installer.</li>
+          <li>If Windows asks <em>"Do you want to allow this app to make changes to your device?"</em>, choose <strong>Yes</strong>.</li>
+          <li>Follow the on-screen steps. Keep the default options unless you have a reason to change them.</li>
+          <li>Wait for the progress bar to finish, then press <strong>Finish</strong>.</li>
+        </ol>
+
+        <h2 id="smartscreen">SmartScreen warnings</h2>
+        <p>Windows Defender SmartScreen checks files that are new or not yet widely downloaded. You may see this message:</p>
+        <p><em>"Windows protected your PC. Microsoft Defender SmartScreen prevented an unrecognized app from starting."</em></p>
+        <p>This does not mean the file is infected. It means Windows has not seen many people download it yet. To continue:</p>
+        <ol>
+          <li>Click <strong>More info</strong>.</li>
+          <li>Check that the file name matches the app you downloaded from this site.</li>
+          <li>Click <strong>Run anyway</strong>.</li>
+        </ol>
+        <p>Only do this for files downloaded directly from this site. If the file name or source looks different, do not run it. <a href="/contact">Contact us</a> instead.</p>
+
+        <h2>Step 3: Open the app</h2>
+        <p>Find the app in the Start menu, or use the desktop shortcut if you chose one during setup.</p>
+
+        <h2>Updating</h2>
+        <p>Download the latest installer from the app page and run it. It replaces the older version. Check the <a href="/changelog">changelog</a> to see what changed.</p>
+
+        <h2>Uninstalling</h2>
+        <p>Go to <strong>Settings &gt; Apps &gt; Installed apps</strong>, find the app, select the three-dot menu, and choose <strong>Uninstall</strong>.</p>
+
+        <h2>Troubleshooting</h2>
+        <h3>The download was blocked or deleted</h3>
+        <p>Some browsers and antivirus tools block unfamiliar installers. Check your browser's download history or the antivirus quarantine. Allow the file only if it came from this site.</p>
+        <h3>The installer will not start</h3>
+        <p>Right-click the file and choose <strong>Run as administrator</strong>. If it still fails, confirm your Windows version meets the requirements on the app page.</p>
+        <h3>Still stuck?</h3>
+        <p>Read the <a href="/faq">FAQ</a> or <a href="/contact">send us a message</a> with your Windows version and the exact error text.</p>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a class="brand" href="/"><span class="logo">FT</span>The Flight Tech Labs</a>
+          <p>Practical software for Windows. Built in-house, shipped with clear versions and honest notes.</p>
+        </div>
+        <div><h5>Product</h5><a href="/apps">Apps</a><a href="/install">Install guide</a><a href="/changelog">Changelog</a><a href="/projects">Projects</a></div>
+        <div><h5>Help</h5><a href="/faq">FAQ</a><a href="/contact">Contact</a><a href="/about">About</a></div>
+        <div><h5>Legal</h5><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
+      </div>
+      <div class="copy"><span>&copy; <span data-year></span> The Flight Tech Labs. All rights reserved.</span></div>
+    </div>
+  </footer>
+</body>
+</html>

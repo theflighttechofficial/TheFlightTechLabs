@@ -1,0 +1,27 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/resumeforge", "destination": "/apps/resumeforge-ai", "permanent": false },
+    { "source": "/download/resumeforge", "destination": "/downloads/ResumeForgeAI-Setup.exe", "permanent": false }
+  ],
+  "headers": [
+    {
+      "source": "/downloads/(.*)",
+      "headers": [
+        { "key": "Content-Disposition", "value": "attachment" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    }
+  ]
+}

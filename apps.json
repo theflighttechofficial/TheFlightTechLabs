@@ -1,0 +1,43 @@
+[
+  {
+    "id": "resumeforge-ai",
+    "slug": "resumeforge-ai",
+    "name": "ResumeForge AI",
+    "monogram": "RF",
+    "tagline": "Offline-first ATS resume engineer for Windows.",
+    "description": "ResumeForge AI builds, audits, parses and optimizes your resume against a specific job description. Scores come from a transparent, deterministic engine, not from an AI guess. Local AI runs on your own PC through Ollama by default, and the TruthGuard check stops any suggestion that adds metrics, tools or achievements you never claimed.",
+    "features": [
+      "Deterministic 100-point ATS score across 8 categories: parsing, keywords, relevance, skills, structure, quality, formatting and completeness",
+      "Fix plan ranked by simulated score gain, tested on a copy before you apply it",
+      "TruthGuard: every AI suggestion is tagged Verified, User provided, Derived or Needs verification",
+      "Local AI by default (Ollama with Qwen3 4B or Qwen2.5 1.5B), picked automatically for your hardware",
+      "Optional online mode with your own API key for OpenAI, Claude, Gemini, Groq, DeepSeek and more, with PII redaction before any request",
+      "Layout-aware parser for Canva sidebars, LaTeX, multi-column, Word and Google Docs resumes",
+      "Multiple isolated local accounts with scrypt passwords, auto-lock and a 24-character recovery code",
+      "Zero telemetry, a Privacy Center to inspect or erase your data, and ATS-safe PDF and DOCX export",
+      "Windows 11 look with Mica backdrop, Snap Layouts, dark mode and a Ctrl+K command palette"
+    ],
+    "version": "1.0.0",
+    "platform": "Windows 10 / 11 (64-bit)",
+    "requirements": "Windows 10 or Windows 11, 64-bit. Ollama for local AI (the setup wizard installs it and the models). 8 GB RAM or more recommended; a GPU with 5 GB VRAM or more enables the larger Qwen3 4B model.",
+    "size": "",
+    "releaseDate": "",
+    "file": "/downloads/ResumeForgeAI-Setup.exe",
+    "fileName": "ResumeForgeAI-Setup-1.0.0.exe",
+    "screenshots": [],
+    "releaseNotes": "Initial release.",
+    "changelog": [
+      {
+        "version": "1.0.0",
+        "date": "",
+        "notes": [
+          "Initial public release.",
+          "Deterministic ATS readiness scoring with ranked fix plan.",
+          "TruthGuard provenance checks on every AI suggestion.",
+          "Local AI through Ollama, plus optional bring-your-own-key online mode.",
+          "Multi-account local sign-in with recovery codes and Privacy Center."
+        ]
+      }
+    ]
+  }
+]
