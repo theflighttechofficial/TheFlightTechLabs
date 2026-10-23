@@ -3,7 +3,7 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/resumeforge", "destination": "/apps/resumeforge-ai", "permanent": false },
-    { "source": "/download/resumeforge", "destination": "/downloads/ResumeForgeAI-Setup.exe", "permanent": false }
+    { "source": "/download/resumeforge", "destination": "https://github.com/theflighttechofficial/ResumeForge-AI-WindowsApp/releases/download/V1.0.0/ResumeForgeAI-Setup.exe", "permanent": false }
   ],
   "headers": [
     {
