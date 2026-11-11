@@ -12,12 +12,24 @@
     });
   }
 
+  var motionOK = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
   function chipsFor(app) {
-    return [
+    var status = app.file
+      ? '<span class="chip chip-ok">Available</span>'
+      : '<span class="chip chip-soon">In development</span>';
+    return status + [
       app.version ? 'v' + app.version : '',
       app.platform || '',
       app.size || ''
     ].filter(Boolean).map(function (c) { return '<span class="chip">' + esc(c) + '</span>'; }).join('');
+  }
+
+  // Apps without a "file" are not released yet: show a disabled button instead of a link.
+  function downloadButton(app) {
+    if (!app.file) return '<span class="btn btn-primary btn-block is-disabled" aria-disabled="true">Coming soon</span>';
+    return '<a class="btn btn-primary btn-block" href="' + esc(app.file) + '" download="' + esc(app.fileName || '') + '">' +
+      DL_ICON + ' ' + esc(app.downloadLabel || 'Download for Windows') + '</a>';
   }
 
   function featuresFor(app) {
@@ -26,7 +38,7 @@
   }
 
   function appCard(app) {
-    var note = app.releaseNotes ? '<p class="app-note"><strong>Latest:</strong> ' + esc(app.releaseNotes) + '</p>' : '';
+    var note = app.releaseNotes ? '<p class="app-note"><strong>' + (app.file ? 'Latest' : 'Status') + ':</strong> ' + esc(app.releaseNotes) + '</p>' : '';
     return (
       '<article class="app">' +
         '<div class="app-top">' +
@@ -37,7 +49,7 @@
         featuresFor(app) +
         '<div class="chips">' + chipsFor(app) + '</div>' +
         '<div class="app-foot">' +
-          '<a class="btn btn-primary btn-block" href="' + esc(app.file) + '" download="' + esc(app.fileName || '') + '">' + DL_ICON + ' Download for Windows</a>' +
+          downloadButton(app) +
           '<a class="btn btn-ghost btn-sm btn-block" href="/apps/' + esc(app.slug || app.id) + '">View details</a>' +
           note +
         '</div>' +
@@ -56,6 +68,7 @@
       el.textContent = v == null || v === '' ? el.getAttribute('data-fallback') || '' : v;
     });
     root.querySelectorAll('[data-href]').forEach(function (el) {
+      if (!app.file) return; // not released: the page keeps its "Coming soon" button
       el.setAttribute('href', app.file);
       el.setAttribute('download', app.fileName || '');
     });
@@ -109,19 +122,101 @@
     );
   }
 
+  function marqueeGroup(sites, hidden) {
+    return '<div class="marquee-group"' + (hidden ? ' aria-hidden="true"' : '') + '>' + sites.map(function (site) {
+      return '<a class="chip" href="' + esc(site.url) + '" target="_blank" rel="noopener"' + (hidden ? ' tabindex="-1"' : '') + '>' + esc(site.name) + '</a>';
+    }).join('') + '</div>';
+  }
+
   function initSites() {
     var root = document.querySelector('[data-sites]');
-    if (!root) return;
+    var featured = document.querySelector('[data-sites-featured]');
+    var marquee = document.querySelector('[data-sites-marquee]');
+    var counts = document.querySelectorAll('[data-site-count]');
+    if (!root && !featured && !marquee && !counts.length) return;
     fetch('/sites.json', { cache: 'no-store' })
       .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
       .then(function (sites) {
-        root.innerHTML = sites.length
-          ? sites.map(siteCard).join('')
-          : '<p class="state">No projects listed yet.</p>';
+        counts.forEach(function (el) { setCount(el, sites.length); });
+        if (root) {
+          root.innerHTML = sites.length
+            ? sites.map(siteCard).join('')
+            : '<p class="state">No projects listed yet.</p>';
+        }
+        if (featured) featured.innerHTML = sites.slice(0, 3).map(siteCard).join('');
+        // the second, hidden copy lets the track loop without a gap
+        if (marquee) marquee.innerHTML = '<div class="marquee-track">' + marqueeGroup(sites, false) + marqueeGroup(sites, true) + '</div>';
+        reveal();
       })
       .catch(function () {
-        root.innerHTML = '<p class="state">Could not load the project list. Refresh the page or try again later.</p>';
+        var msg = '<p class="state">Could not load the project list. Refresh the page or try again later.</p>';
+        if (root) root.innerHTML = msg;
+        if (featured) featured.innerHTML = msg;
+        if (marquee) marquee.hidden = true;
       });
+  }
+
+  // ---------- Motion ----------
+  var REVEAL = '.section-head, .stat, .app, .card, .step, .callout, .cta-band, .panel, .release, .faq details, .marquee, .legal > *';
+  var revealer = null;
+
+  // Fade and lift elements in as they enter the viewport. Called again after the JSON lists render.
+  function reveal() {
+    if (!motionOK || !('IntersectionObserver' in window)) return;
+    if (!revealer) {
+      revealer = new IntersectionObserver(function (entries) {
+        var k = 0;
+        entries.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          var el = en.target;
+          var delay = Math.min(k++, 6) * 70;
+          revealer.unobserve(el);
+          el.style.transitionDelay = delay + 'ms';
+          el.classList.add('in');
+          // drop the helper classes afterwards so hover transitions go back to normal
+          setTimeout(function () {
+            el.classList.remove('reveal', 'in');
+            el.style.transitionDelay = '';
+          }, delay + 800);
+        });
+      }, { rootMargin: '0px 0px -6% 0px' });
+    }
+    document.querySelectorAll(REVEAL).forEach(function (el) {
+      if (el.dataset.seen) return;
+      el.dataset.seen = '1';
+      el.classList.add('reveal');
+      revealer.observe(el);
+    });
+  }
+
+  function setCount(el, n) {
+    if (!motionOK || n < 2) { el.textContent = n; return; }
+    var t0 = null;
+    requestAnimationFrame(function step(t) {
+      if (!t0) t0 = t;
+      var k = Math.min((t - t0) / 700, 1);
+      el.textContent = Math.round(n * (1 - Math.pow(1 - k, 3)));
+      if (k < 1) requestAnimationFrame(step);
+    });
+  }
+
+  function initMotion() {
+    var nav = document.querySelector('.site-nav');
+    if (nav) {
+      var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+    reveal();
+    if (!motionOK) return;
+    // cards light up under the pointer (see the "spotlight" rules in styles.css)
+    document.addEventListener('pointermove', function (e) {
+      var el = e.target.closest && e.target.closest('.app, .card, .step, .stat, .panel');
+      if (!el) return;
+      var r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    }, { passive: true });
   }
 
   function showToast(msg) {
@@ -159,6 +254,7 @@
     y.forEach(function (el) { el.textContent = new Date().getFullYear(); });
     initNav();
     initForms();
+    initMotion();
     initSites();
 
     var grid = document.querySelector('[data-app-grid]');
@@ -171,7 +267,11 @@
     fetch('/apps.json', { cache: 'no-store' })
       .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
       .then(function (apps) {
-        counts.forEach(function (el) { el.textContent = apps.length; });
+        var live = apps.filter(function (a) { return a.file; }).length;
+        counts.forEach(function (el) {
+          var kind = el.getAttribute('data-count');
+          setCount(el, kind === 'available' ? live : kind === 'upcoming' ? apps.length - live : apps.length);
+        });
         if (grid) {
           grid.innerHTML = apps.length
             ? apps.map(appCard).join('')
@@ -186,6 +286,7 @@
           else detail.innerHTML = '<p class="state">App not found. <a href="/apps">Back to all apps</a></p>';
         }
         if (changelog) renderChangelog(apps, changelog);
+        reveal();
       })
       .catch(function () {
         var msg = '<p class="state">Could not load the app list. Refresh the page or try again later.</p>';

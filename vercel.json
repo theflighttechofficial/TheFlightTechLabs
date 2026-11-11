@@ -2,6 +2,9 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    { "source": "/fridgechef", "destination": "/apps/fridgechef-ai", "permanent": false },
+    { "source": "/download/fridgechef", "destination": "https://github.com/theflighttechofficial/FridgeChef-AI/releases/download/V1.0.0/app-debug.apk", "permanent": false },
+    { "source": "/focusbuddy", "destination": "/apps/focusbuddy", "permanent": false },
     { "source": "/resumeforge", "destination": "/apps/resumeforge-ai", "permanent": false },
     { "source": "/download/resumeforge", "destination": "https://github.com/theflighttechofficial/ResumeForge-AI-WindowsApp/releases/download/V1.0.0/ResumeForgeAI-Setup.exe", "permanent": false }
   ],

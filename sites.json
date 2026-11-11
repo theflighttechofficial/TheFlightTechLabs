@@ -40,5 +40,19 @@
     "monogram": "LS",
     "category": "Interactive portfolio",
     "about": "Illuminate the web. An interactive 3D personal showcase exploring light, ambience and visual design, where every pixel, transition and sound cue is crafted as part of the experience."
+  },
+  {
+    "name": "HomeFinder+",
+    "url": "https://home-finder-plus-rent-buy-sell.vercel.app/",
+    "monogram": "HF",
+    "category": "Real estate",
+    "about": "Rent, buy and sell homes across India and talk to owners directly, with no brokers. Live search filters, listing pages with photo galleries and maps, favourites, side-by-side compare for up to 4 homes, and in-app messaging between buyers and owners."
+  },
+  {
+    "name": "Cooked: The Profile Roaster",
+    "url": "https://cooked-the-profile-roaster.vercel.app/",
+    "monogram": "CK",
+    "category": "AI & fun",
+    "about": "Type a username and get roasted by your own data. Cooked pulls your real public stats from 34 platforms, then an AI roasts you with them. Stack up to 4 profiles, run a two-profile battle, or upload a screenshot. 6 roaster personas and 3 heat levels."
   }
 ]

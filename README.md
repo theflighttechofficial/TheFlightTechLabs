@@ -90,6 +90,8 @@ Maintains metadata, distribution assets, feature lists, versioning, and release 
 }
 ```
 
+An app with an empty `file` is treated as not released: its card shows an "In development" chip and a disabled "Coming soon" button. Set `file` (and `downloadLabel`, for example `Download for Android`) when the first release is out.
+
 ### 2. Projects & Sites (`sites.json`)
 Drives the portfolio index on `projects.html` for associated web applications and client showcases.
 

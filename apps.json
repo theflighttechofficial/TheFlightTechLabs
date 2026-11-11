@@ -38,6 +38,80 @@
           "Multi-account local sign-in with recovery codes and Privacy Center."
         ]
       }
+    ],
+    "status": "available",
+    "downloadLabel": "Download for Windows"
+  },
+  {
+    "id": "fridgechef-ai",
+    "slug": "fridgechef-ai",
+    "name": "FridgeChef AI",
+    "monogram": "FC",
+    "tagline": "Snap your fridge. Cook what you have.",
+    "description": "FridgeChef AI turns a photo of your fridge into meals you can cook tonight. It reads the ingredients, suggests zero-waste recipes, and guides you through each step hands-free. One codebase ships as an Android app and a website, with a Material 3 (Material You) interface. A built-in recipe model works fully offline, and you can add your own AI key for photo reading and richer recipes.",
+    "features": [
+      "Fridge scanner: snap a photo and the app lists your ingredients",
+      "On-device recipe model that runs fully offline: 712 recipes across 82 cuisines, including 25 Indian regional cuisines",
+      "Step-by-step cooking mode with hands-free voice guidance and timers",
+      "Pantry health and expiry tracking to cut food waste",
+      "7-day meal planner and smart shopping list",
+      "Personal nutrition dashboard built from the meals you actually cooked",
+      "Bring your own AI key: Google Gemini, OpenAI, Anthropic Claude, Groq, OpenRouter, Mistral, DeepSeek, xAI or any OpenAI-compatible endpoint",
+      "Your API key is stored only on your device",
+      "Material You theming: pick one colour and it tints the whole app"
+    ],
+    "version": "1.0.0",
+    "platform": "Android · Web",
+    "requirements": "Android 7.0 (API 24) or newer. Optional: your own AI provider API key for photo reading and cloud recipes.",
+    "size": "5.2 MB",
+    "releaseDate": "2026-11-11",
+    "status": "available",
+    "file": "https://github.com/theflighttechofficial/FridgeChef-AI/releases/download/V1.0.0/app-debug.apk",
+    "fileName": "FridgeChefAI-1.0.0.apk",
+    "downloadLabel": "Download for Android",
+    "screenshots": [
+      {
+        "src": "/assets/img/fridgechef-desktop.jpg",
+        "alt": "FridgeChef AI recipes view on desktop with navigation rail, filters and recipe cards"
+      }
+    ],
+    "releaseNotes": "Initial release.",
+    "changelog": [
+      {
+        "version": "1.0.0",
+        "date": "2026-11-11",
+        "notes": [
+          "Initial public release for Android.",
+          "Fridge photo scanner and offline on-device recipe model.",
+          "Step-by-step cooking mode, meal planner, shopping list and nutrition dashboard.",
+          "Bring-your-own AI key support."
+        ]
+      }
     ]
+  },
+  {
+    "id": "focusbuddy",
+    "slug": "focusbuddy",
+    "name": "FocusBuddy",
+    "monogram": "FB",
+    "tagline": "A desktop companion that keeps you on task.",
+    "description": "FocusBuddy is a Windows desktop companion that detects distracting apps and sites while you work. It is in development. The installer and full feature list appear here at first release.",
+    "features": [
+      "Detects distracting apps",
+      "Detects distracting websites",
+      "Runs as a Windows desktop companion"
+    ],
+    "version": "",
+    "platform": "Windows",
+    "requirements": "Windows. Full requirements are published with the first release.",
+    "size": "",
+    "releaseDate": "",
+    "status": "coming-soon",
+    "file": "",
+    "fileName": "",
+    "downloadLabel": "Download for Windows",
+    "screenshots": [],
+    "releaseNotes": "In development. The Windows installer appears here at first release.",
+    "changelog": []
   }
 ]
