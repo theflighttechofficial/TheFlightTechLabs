@@ -15,9 +15,11 @@
   var motionOK = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
   function chipsFor(app) {
-    var status = app.file
-      ? '<span class="chip chip-ok">Available</span>'
-      : '<span class="chip chip-soon">In development</span>';
+    var status = !app.file
+      ? '<span class="chip chip-soon">In development</span>'
+      : app.status === 'prerelease'
+        ? '<span class="chip chip-pre">Pre-release</span>'
+        : '<span class="chip chip-ok">Available</span>';
     return status + [
       app.version ? 'v' + app.version : '',
       app.platform || '',
@@ -38,7 +40,7 @@
   }
 
   function appCard(app) {
-    var note = app.releaseNotes ? '<p class="app-note"><strong>' + (app.file ? 'Latest' : 'Status') + ':</strong> ' + esc(app.releaseNotes) + '</p>' : '';
+    var note = app.releaseNotes ? '<p class="app-note"><strong>' + (app.file && app.status !== 'prerelease' ? 'Latest' : 'Status') + ':</strong> ' + esc(app.releaseNotes) + '</p>' : '';
     return (
       '<article class="app">' +
         '<div class="app-top">' +
@@ -267,7 +269,8 @@
     fetch('/apps.json', { cache: 'no-store' })
       .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
       .then(function (apps) {
-        var live = apps.filter(function (a) { return a.file; }).length;
+        // "available" = stable release; "upcoming" = pre-release or still in development
+        var live = apps.filter(function (a) { return a.file && a.status !== 'prerelease'; }).length;
         counts.forEach(function (el) {
           var kind = el.getAttribute('data-count');
           setCount(el, kind === 'available' ? live : kind === 'upcoming' ? apps.length - live : apps.length);

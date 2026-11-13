@@ -17,19 +17,26 @@
       "Zero telemetry, a Privacy Center to inspect or erase your data, and ATS-safe PDF and DOCX export",
       "Windows 11 look with Mica backdrop, Snap Layouts, dark mode and a Ctrl+K command palette"
     ],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "platform": "Windows 10 / 11 (64-bit)",
     "requirements": "Windows 10 or Windows 11, 64-bit. Ollama for local AI (the setup wizard installs it and the models). 8 GB RAM or more recommended; a GPU with 5 GB VRAM or more enables the larger Qwen3 4B model.",
     "size": "123 MB",
-    "releaseDate": "",
-    "file": "https://github.com/theflighttechofficial/ResumeForge-AI-WindowsApp/releases/download/V1.0.0/ResumeForgeAI-Setup.exe",
-    "fileName": "ResumeForgeAI-Setup-1.0.0.exe",
+    "releaseDate": "2026-11-13",
+    "file": "https://github.com/theflighttechofficial/ResumeForge-AI-WindowsApp/releases/download/V1.0.1/ResumeForgeAI-Setup.exe",
+    "fileName": "ResumeForgeAI-Setup-1.0.1.exe",
     "screenshots": [],
-    "releaseNotes": "Initial release.",
+    "releaseNotes": "Updated Windows installer.",
     "changelog": [
       {
+        "version": "1.0.1",
+        "date": "2026-11-13",
+        "notes": [
+          "Updated Windows installer."
+        ]
+      },
+      {
         "version": "1.0.0",
-        "date": "",
+        "date": "2026-10-23",
         "notes": [
           "Initial public release.",
           "Deterministic ATS readiness scoring with ranked fix plan.",
@@ -94,24 +101,48 @@
     "slug": "focusbuddy",
     "name": "FocusBuddy",
     "monogram": "FB",
-    "tagline": "A desktop companion that keeps you on task.",
-    "description": "FocusBuddy is a Windows desktop companion that detects distracting apps and sites while you work. It is in development. The installer and full feature list appear here at first release.",
+    "tagline": "A tiny 3D companion that nudges you back to work.",
+    "description": "FocusBuddy is a desktop pet with a job. A small 3D companion wanders your Windows desktop, naps on the taskbar and watches your cursor. When you drift onto a distracting site during a focus session, it notices, walks over to the window and asks if you want to get back to work. It is helpful and playful, never controlling, and it only closes a tab if you said it may. Everything stays on your PC.",
     "features": [
-      "Detects distracting apps",
-      "Detects distracting websites",
-      "Runs as a Windows desktop companion"
+      "Eight rigged 3D companions: cat, dog, fox, rabbit, robot, Study Buddy, Study Girl and Saree Girl, each with its own personality, gait and dialogue",
+      "25 emotions, a daily routine, and a companion you can click, drag, pet and resize with Ctrl + mouse wheel",
+      "Fair distraction scoring from 0 to 100: a YouTube Python tutorial scores lower than a funny compilation",
+      "Gentle escalation: notice, warning, offer, then an optional countdown. Extra time is allowed once per site per session",
+      "Focus sessions of 25, 45, 60 or 90 minutes or custom, with breaks, a daily goal and a celebration at the end",
+      "Dashboard with Focus, Tasks, Statistics, Reports, History and a local Focus Coach that learns your best and riskiest hours",
+      "Optional browser extension for Chrome, Edge, Brave, Opera, Vivaldi and Firefox that tells the app the exact website",
+      "Safe by design: Explorer, Task Manager, security tools and password managers are never touched, and apps with unsaved work are minimized, not closed",
+      "100% local: no cloud account, no upload. Window titles, full URLs, keystrokes and screenshots are never stored",
+      "Light and dark themes, Ctrl+K command search, local profiles with an optional PIN, and a tray icon"
     ],
-    "version": "",
-    "platform": "Windows",
-    "requirements": "Windows. Full requirements are published with the first release.",
-    "size": "",
-    "releaseDate": "",
-    "status": "coming-soon",
-    "file": "",
-    "fileName": "",
-    "downloadLabel": "Download for Windows",
-    "screenshots": [],
-    "releaseNotes": "In development. The Windows installer appears here at first release.",
-    "changelog": []
+    "version": "2.3.0",
+    "platform": "Windows 10 / 11",
+    "requirements": "Windows 10 or Windows 11. Installs for your user only, with no administrator rights. Optional: the FocusBuddy Connector browser extension for exact website detection.",
+    "size": "78 MB",
+    "releaseDate": "2026-11-13",
+    "status": "prerelease",
+    "file": "https://github.com/theflighttechofficial/FocusBuddy-AI-Companion/releases/download/V1.0.0/FocusBuddy-Setup-2.3.0.exe",
+    "fileName": "FocusBuddy-Setup-2.3.0.exe",
+    "downloadLabel": "Download pre-release",
+    "screenshots": [
+      {
+        "src": "/assets/img/focusbuddy-lineup.png",
+        "alt": "The eight FocusBuddy companions: cat, dog, fox, rabbit, robot, Study Buddy, Study Girl and Saree Girl"
+      }
+    ],
+    "releaseNotes": "Pre-release 2.3.0. Expect rough edges, and send us feedback.",
+    "changelog": [
+      {
+        "version": "2.3.0 (pre-release)",
+        "date": "2026-11-13",
+        "notes": [
+          "First public pre-release of the Windows installer.",
+          "Eight 3D desktop companions with emotions and a daily routine.",
+          "Focus sessions, distraction scoring and gentle interventions.",
+          "Dashboard with statistics, reports, history and a local Focus Coach.",
+          "FocusBuddy Connector browser extension for exact website detection."
+        ]
+      }
+    ]
   }
 ]

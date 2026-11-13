@@ -210,6 +210,7 @@ ul { margin: 0; }
   background: #0b1020; padding: 4px 11px; border-radius: 999px;
 }
 .chip-ok { color: var(--ok); border-color: rgba(61, 220, 151, .35); background: rgba(61, 220, 151, .08); }
+.chip-pre { color: var(--accent-2); border-color: rgba(139, 108, 255, .45); background: rgba(139, 108, 255, .1); }
 .chip-soon { color: var(--warn); border-color: rgba(255, 200, 87, .35); background: rgba(255, 200, 87, .08); }
 .app-foot { margin-top: auto; display: grid; gap: 12px; }
 .app-note { font-size: .86rem; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 14px; margin: 0; }
@@ -313,6 +314,9 @@ ul { margin: 0; }
   display: grid; place-items: center; color: var(--muted); font-size: .85rem;
 }
 .screen img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-sm); }
+/* real screenshots keep their own shape (wide strips, phone shots) */
+.screen:has(img) { aspect-ratio: auto; border-style: solid; background: var(--bg-soft); grid-column: 1 / -1; }
+.screen:has(img) img { height: auto; object-fit: contain; }
 
 /* ---------- Changelog ---------- */
 .timeline { position: relative; display: grid; gap: 22px; padding-left: 28px; }
