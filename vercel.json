@@ -3,7 +3,7 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/fridgechef", "destination": "/apps/fridgechef-ai", "permanent": false },
-    { "source": "/download/fridgechef", "destination": "https://github.com/theflighttechofficial/FridgeChef-AI/releases/download/V1.0.0/app-debug.apk", "permanent": false },
+    { "source": "/download/fridgechef", "destination": "https://github.com/theflighttechofficial/FridgeChef-AI/releases/download/V1.0.1/app-debug.apk", "permanent": false },
     { "source": "/download/focusbuddy", "destination": "https://github.com/theflighttechofficial/FocusBuddy-AI-Companion/releases/download/V1.0.0/FocusBuddy-Setup-2.3.0.exe", "permanent": false },
     { "source": "/focusbuddy", "destination": "/apps/focusbuddy", "permanent": false },
     { "source": "/resumeforge", "destination": "/apps/resumeforge-ai", "permanent": false },

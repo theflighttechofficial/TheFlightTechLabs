@@ -67,14 +67,14 @@
       "Your API key is stored only on your device",
       "Material You theming: pick one colour and it tints the whole app"
     ],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "platform": "Android · Web",
     "requirements": "Android 7.0 (API 24) or newer. Optional: your own AI provider API key for photo reading and cloud recipes.",
     "size": "5.2 MB",
-    "releaseDate": "2026-11-11",
+    "releaseDate": "2026-11-15",
     "status": "available",
-    "file": "https://github.com/theflighttechofficial/FridgeChef-AI/releases/download/V1.0.0/app-debug.apk",
-    "fileName": "FridgeChefAI-1.0.0.apk",
+    "file": "https://github.com/theflighttechofficial/FridgeChef-AI/releases/download/V1.0.1/app-debug.apk",
+    "fileName": "FridgeChefAI-1.0.1.apk",
     "downloadLabel": "Download for Android",
     "screenshots": [
       {
@@ -82,8 +82,18 @@
         "alt": "FridgeChef AI recipes view on desktop with navigation rail, filters and recipe cards"
       }
     ],
-    "releaseNotes": "Initial release.",
+    "releaseNotes": "Camera and gallery picker, 288 more dishes, detailed cooking steps and a faster, more animated app.",
     "changelog": [
+      {
+        "version": "1.0.1",
+        "date": "2026-11-15",
+        "notes": [
+          "Camera and gallery picker for fridge photos, and the fridge photo now persists.",
+          "On-device account with a fresh start for every account, and a prompt to add your AI key.",
+          "288 more dishes, more recipe variety, detailed cooking steps and kitchen basics.",
+          "Gemini fix, layout fixes, decluttered screens, and a faster, more animated app."
+        ]
+      },
       {
         "version": "1.0.0",
         "date": "2026-11-11",
