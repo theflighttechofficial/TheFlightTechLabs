@@ -17,16 +17,23 @@
       "Zero telemetry, a Privacy Center to inspect or erase your data, and ATS-safe PDF and DOCX export",
       "Windows 11 look with Mica backdrop, Snap Layouts, dark mode and a Ctrl+K command palette"
     ],
-    "version": "1.0.1",
+    "version": "1.0.2",
     "platform": "Windows 10 / 11 (64-bit)",
     "requirements": "Windows 10 or Windows 11, 64-bit. Ollama for local AI (the setup wizard installs it and the models). 8 GB RAM or more recommended; a GPU with 5 GB VRAM or more enables the larger Qwen3 4B model.",
     "size": "123 MB",
-    "releaseDate": "2026-11-13",
-    "file": "https://github.com/theflighttechofficial/ResumeForge-AI-WindowsApp/releases/download/V1.0.1/ResumeForgeAI-Setup.exe",
-    "fileName": "ResumeForgeAI-Setup-1.0.1.exe",
+    "releaseDate": "2026-11-21",
+    "file": "https://github.com/theflighttechofficial/ResumeForge-AI-WindowsApp/releases/download/V1.0%2C2/ResumeForgeAI-Setup.exe",
+    "fileName": "ResumeForgeAI-Setup-1.0.2.exe",
     "screenshots": [],
     "releaseNotes": "Updated Windows installer.",
     "changelog": [
+      {
+        "version": "1.0.2",
+        "date": "2026-11-21",
+        "notes": [
+          "Updated Windows installer."
+        ]
+      },
       {
         "version": "1.0.1",
         "date": "2026-11-13",
@@ -67,14 +74,14 @@
       "Your API key is stored only on your device",
       "Material You theming: pick one colour and it tints the whole app"
     ],
-    "version": "1.0.1",
+    "version": "1.2.0",
     "platform": "Android · Web",
     "requirements": "Android 7.0 (API 24) or newer. Optional: your own AI provider API key for photo reading and cloud recipes.",
     "size": "5.2 MB",
-    "releaseDate": "2026-11-15",
+    "releaseDate": "2026-11-18",
     "status": "available",
-    "file": "https://github.com/theflighttechofficial/FridgeChef-AI/releases/download/V1.0.1/app-debug.apk",
-    "fileName": "FridgeChefAI-1.0.1.apk",
+    "file": "https://github.com/theflighttechofficial/FridgeChef-AI/releases/download/V1.2.0/app-debug.apk",
+    "fileName": "FridgeChefAI-1.2.0.apk",
     "downloadLabel": "Download for Android",
     "screenshots": [
       {
@@ -82,8 +89,19 @@
         "alt": "FridgeChef AI recipes view on desktop with navigation rail, filters and recipe cards"
       }
     ],
-    "releaseNotes": "Camera and gallery picker, 288 more dishes, detailed cooking steps and a faster, more animated app.",
+    "releaseNotes": "\"Indian food first\" switch and 159 more Indian dishes, including 43 Tamil dishes.",
     "changelog": [
+      {
+        "version": "1.2.0",
+        "date": "2026-11-18",
+        "notes": [
+          "New \"Indian food first\" switch.",
+          "159 more Indian dishes, including 43 Tamil dishes.",
+          "Includes 1.1.0: taste questions to tune your recipe suggestions.",
+          "Includes 1.1.0: your account now survives a reinstall.",
+          "Includes 1.1.0: 99 more dishes."
+        ]
+      },
       {
         "version": "1.0.1",
         "date": "2026-11-15",
